@@ -10,7 +10,7 @@
 #15,Samantha,Lara,09/08/1993,***-**-7526,CO
 #411,Stacy,Charles,12/20/1957,***-**-8526,PA
 
-import csv
+import csv 
 import os
 
 emp_id = []
