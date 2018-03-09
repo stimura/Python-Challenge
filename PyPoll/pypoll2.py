@@ -81,33 +81,25 @@ print("------------------------------")
 
 print("\n")
 
-# formatting for csv
-formatted_candidate1_percentage = str(candidate1_percentage) + "%"
-formatted_candidate2_percentage = str(candidate2_percentage) + "%"
-formatted_candidate3_percentage = str(candidate3_percentage) + "%"
-formatted_candidate4_percentage = str(candidate4_percentage) + "%"
-
-# formatting for csv
-if max(winner) == candidate1_votes:
-    winning_candidate = candidate1[0]
-elif max(winner) == candidate2_votes:
-    winning_candidate = candidate2[0]
-elif max(winner) == candidate3_votes:
-    winning_candidate = candidate3[0]
-elif max(winner) == candidate4_votes:
-    winning_candidate = candidate4[0]
-
-# Creating first row for csv
-title_row = ["Total Votes", candidate1[0], candidate2[0], candidate3[0], candidate4[0], "Winner"]
-
-# Creating a list for the results csv
-results_list = [total_votes, formatted_candidate1_percentage, formatted_candidate2_percentage, formatted_candidate3_percentage, formatted_candidate4_percentage, winning_candidate]
-
 # Writing onto file
-output_file = "pypoll2_results.csv"
+output_file = "pypoll2_results.txt"
 
 # creating and editing the new file with results
-with open(output_file, "w", encoding="latin-1") as csvfile:
-    writer = csv.writer(csvfile)
-    writer.writerow(title_row)
-    writer.writerow(results_list)
+with open(output_file, 'w') as file_object:
+    file_object.write("\nElection Results")
+    file_object.write("\n------------------------------")
+    file_object.write("\nTotal Votes: " + str(total_votes))
+    file_object.write("\n------------------------------")
+    file_object.write("\n" + candidate1[0] + ": " + str(candidate1_percentage) + "% (" + str(len(candidate1)) + ")")
+    file_object.write("\n" + candidate2[0] + ": " + str(candidate2_percentage) + "% (" + str(len(candidate2)) + ")")
+    file_object.write("\n" + candidate3[0] + ": " + str(candidate3_percentage) + "% (" + str(len(candidate3)) + ")")
+    file_object.write("\n" + candidate4[0] + ": " + str(candidate4_percentage) + "% (" + str(len(candidate4)) + ")")
+    file_object.write("\n------------------------------")
+    if max(winner) == candidate1_votes:
+        file_object.write("\nWinner: " + str(candidate1[0]))
+    elif max(winner) == candidate2_votes:
+        file_object.write("\nWinner: " + str(candidate2[0]))
+    elif max(winner) == candidate3_votes:
+        file_object.write("\nWinner: " + str(candidate3[0]))
+    elif max(winner) == candidate4_votes:
+        file_object.write("\nWinner: " + str(candidate4[0]))

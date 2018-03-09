@@ -51,6 +51,7 @@ length_mon = len(months)
 avg_revenue_change = stats.mean(revenue_change)
 
 # Print header, total months, total revenue, average revenue change
+print("\n")
 print("Financial Analysis:")
 print("-------------------------------")
 print("Total Months: " + str(length_mon))
@@ -70,6 +71,7 @@ dictionary = dict(zip(revenue_change, months))
 # Printing the greatest increase and decrease in revenue
 print("Greatest Increase in Revenue: " + dictionary[max_change] + " ($" + str(max_change) + ")")
 print("Greatest Decrease in Revenue: " + dictionary[min_change] + " ($" + str(min_change) + ")")
+print("\n")
 
 # Creating a variable for greatest increase and decrease
 greatest_increase = str(dictionary[max_change]) +" : "+ str(max_change)
@@ -79,10 +81,14 @@ greatest_decrease = str(dictionary[min_change]) +" : "+ str(min_change)
 results_list = [length_mon, total_revenue, avg_revenue_change, greatest_increase, greatest_decrease]
 
 # Writing onto file
-output_file = "pybank1_results.csv"
+output_file = "pybank1_results.txt"
 
 # creating and editing the new file with results
-with open(output_file, "w", encoding="latin-1") as csvfile:
-    writer = csv.writer(csvfile)
-    writer.writerow(["Total Months", "Total Revenue", "Average Revenue Change", "Greatest Increase in Revenue", "Greatest Decrease in Revenue"])
-    writer.writerow(results_list)
+with open(output_file, 'w') as file_object:
+    file_object.write("\nFinancial Analysis:")
+    file_object.write("\n------------------------")
+    file_object.write("\nTotal Months: " + str(length_mon))
+    file_object.write("\nTotal Revenue: $" + str(total_revenue))
+    file_object.write("\nAverage Revenue Change: $" + str(avg_revenue_change))
+    file_object.write("\nGreatest Increase in Revenue: " + dictionary[max_change] + " ($" + str(max_change) + ")")
+    file_object.write("\nGreatest Decrease in Revenue: " + dictionary[min_change] + " ($" + str(min_change) + ")")
