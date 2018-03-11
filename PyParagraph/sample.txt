@@ -1,0 +1,1 @@
+This is a test. I want to see if my program will recognize sentences. Please feel free to use this file as a test for my program.

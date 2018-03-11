@@ -54,11 +54,6 @@ us_state_abbrev = {
 import csv 
 import os
 
-# Prompt user to specify which file they would like to use.
-print("Which file would you like to use? Maybe employee_data1.csv?")
-filename = input(" ")
-
-
 emp_id = []
 names = []
 dob = []
@@ -66,7 +61,7 @@ ssn = []
 states = []
 
 os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3_copy")
-csvpath = os.path.join("PyBoss", filename)
+csvpath = os.path.join("PyBoss", "employee_data2.csv")
 
 # Add the neccessary information to the empty lists
 with open(csvpath, encoding="latin-1") as csvfile:
@@ -126,7 +121,7 @@ for state in states:
     new_states.append(us_state_abbrev[state])
 
 # Exporting data to csv
-output_file = "pyboss1.csv"
+output_file = "pyboss2.csv"
 
 with open(output_file, "w", encoding="latin-1") as csvfile:
     writer = csv.writer(csvfile)
@@ -134,5 +129,5 @@ with open(output_file, "w", encoding="latin-1") as csvfile:
     for z in range(len(emp_id)):
         new_list = (emp_id[z], first_name[z], last_name[z], new_dob[z], new_ssn[z], new_states[z])
         writer.writerow(new_list)
-
+        
 

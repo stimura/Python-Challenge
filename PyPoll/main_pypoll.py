@@ -2,6 +2,10 @@ import csv
 import os
 import numpy as np
 
+# Prompt user which file they would like to use
+print("Which file would you like to use? Maybe election_data_1.csv?")
+filename = input(" ")
+
 # initial titles
 print("\nElection Results")
 print("------------------------------")
@@ -11,7 +15,7 @@ county = []
 candidate = []
 
 os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3_copy")
-csvpath = os.path.join("PyPoll", "election_data_1.csv")
+csvpath = os.path.join("PyPoll", filename)
 
 # Add the neccessary information to the empty lists
 with open(csvpath, encoding="latin-1") as csvfile:
@@ -82,7 +86,7 @@ print("------------------------------")
 print("\n")
 
 # Writing onto file
-output_file = "pypoll1_results.txt"
+output_file = "pypoll_results.txt"
 
 # creating and editing the new file with results
 with open(output_file, 'w') as file_object:

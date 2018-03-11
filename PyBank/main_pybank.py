@@ -2,12 +2,16 @@ import csv
 import os
 import statistics as stats
 
+# Prompt user which csv they would like to use
+print("Which file would you like to use? Maybe budget_data_1.csv?")
+filename = input(" ")
+
 months = []
 revenue = []
 revenue_change = []
 
 os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3_copy")
-csvpath = os.path.join("PyBank", "budget_data_1.csv")
+csvpath = os.path.join("PyBank", filename)
 
 # Add the neccessary information to the empty lists
 with open(csvpath, encoding="latin-1") as csvfile:
@@ -81,7 +85,7 @@ greatest_decrease = str(dictionary[min_change]) +" : "+ str(min_change)
 results_list = [length_mon, total_revenue, avg_revenue_change, greatest_increase, greatest_decrease]
 
 # Writing onto file
-output_file = "pybank1_results.txt"
+output_file = "pybank_results.txt"
 
 # creating and editing the new file with results
 with open(output_file, 'w') as file_object:

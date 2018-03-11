@@ -6,7 +6,7 @@ months = []
 revenue = []
 revenue_change = []
 
-os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3")
+os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3_copy")
 csvpath = os.path.join("PyBank", "budget_data_2.csv")
 
 # Add the neccessary information to the empty lists
