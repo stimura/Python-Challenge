@@ -1,8 +1,8 @@
 import statistics as stats
 import re
 
-print("Please type the name of the file you would like me to analyze.")
-filename = input(" ")
+print("Type the name of the file you would like me to analyze.")
+filename = input("> ")
 
 with open(filename) as file_object:
     lines = file_object.readlines()     

@@ -3,8 +3,8 @@ import os
 import numpy as np
 
 # Prompt user which file they would like to use
-print("Which file would you like to use? Maybe election_data_1.csv?")
-filename = input(" ")
+print("Please type in election_data_1.csv or election_data_2.csv?")
+filename = input("> ")
 
 # initial titles
 print("\nElection Results")
@@ -14,8 +14,7 @@ voter_id = []
 county = []
 candidate = []
 
-os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3_copy")
-csvpath = os.path.join("PyPoll", filename)
+csvpath = filename
 
 # Add the neccessary information to the empty lists
 with open(csvpath, encoding="latin-1") as csvfile:

@@ -60,8 +60,7 @@ dob = []
 ssn = []
 states = []
 
-os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3_copy")
-csvpath = os.path.join("PyBoss", "employee_data2.csv")
+csvpath = "employee_data2.csv"
 
 # Add the neccessary information to the empty lists
 with open(csvpath, encoding="latin-1") as csvfile:

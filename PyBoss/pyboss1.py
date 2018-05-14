@@ -55,8 +55,8 @@ import csv
 import os
 
 # Prompt user to specify which file they would like to use.
-print("Which file would you like to use? Maybe employee_data1.csv?")
-filename = input(" ")
+print("Type in employee_data1.csv or employee_data1.csv:")
+filename = input("> ")
 
 
 emp_id = []
@@ -65,8 +65,7 @@ dob = []
 ssn = []
 states = []
 
-os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3_copy")
-csvpath = os.path.join("PyBoss", filename)
+csvpath = filename
 
 # Add the neccessary information to the empty lists
 with open(csvpath, encoding="latin-1") as csvfile:

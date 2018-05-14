@@ -6,11 +6,10 @@ months = []
 revenue = []
 revenue_change = []
 
-os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3_copy")
-csvpath = os.path.join("PyBank", "budget_data_2.csv")
+file = "budget_data_2.csv"
 
 # Add the neccessary information to the empty lists
-with open(csvpath, encoding="latin-1") as csvfile:
+with open(file, encoding="latin-1") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     for row in csvreader:
         months.append(row[0])

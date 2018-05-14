@@ -3,15 +3,14 @@ import os
 import statistics as stats
 
 # Prompt user which csv they would like to use
-print("Which file would you like to use? Maybe budget_data_1.csv?")
-filename = input(" ")
+print("Please type in budget_data_1.csv or budget_data_2.csv:")
+filename = input("> ")
 
 months = []
 revenue = []
 revenue_change = []
 
-os.chdir("/Users/SamTimura/Desktop/GWU_HW/Assignment_3_copy")
-csvpath = os.path.join("PyBank", filename)
+csvpath = filename
 
 # Add the neccessary information to the empty lists
 with open(csvpath, encoding="latin-1") as csvfile:
